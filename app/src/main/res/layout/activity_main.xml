@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <!-- Button to open the color changing section -->
+
+    <!-- Color changing section, initially hidden -->
+
+    <Button
+        android:id="@+id/btn_show_color_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Open Color Page" />
+
+    <LinearLayout
+            android:id="@+id/color_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <View
+                android:id="@+id/A_color"
+                android:layout_width="match_parent"
+                android:layout_height="254dp"
+                android:background="#000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/A_code"
+                android:textSize="24sp"
+                android:text="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/A_value"
+                android:text="RGB(0, 0, 0)"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <SeekBar
+                android:id="@+id/sb_red"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="255"
+                android:progressTint="#FF0000"
+                android:thumbTint="#FF0000"
+                android:layout_marginTop="16dp" />
+
+            <SeekBar
+                android:id="@+id/sb_green"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="255"
+                android:thumbTint="#00FF00"
+                android:progressTint="#00FF00"
+                android:layout_marginTop="16dp" />
+
+            <SeekBar
+                android:id="@+id/sb_blue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="255"
+                android:thumbTint="#0000FF"
+                android:progressTint="#0000FF"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_colors"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"/>
+</RelativeLayout>
